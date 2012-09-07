@@ -1,0 +1,17 @@
+/********************************************************
+PorkScript Game Engine (C) 2012 Andy J. Brennan
+All Rights Reserved.
+
+PorkParserWin.rc -- Recource file for Pork icon
+********************************************************/
+
+#include <windows.h>
+#include <commctrl.h>
+#include <richedit.h>
+
+
+//
+// Icon resources
+//
+LANGUAGE 9, SUBLANG_DEFAULT
+//IDI_PORKICO        ICON           "..\\Debug\\Pork2.ico"

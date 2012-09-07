@@ -1,0 +1,69 @@
+requires kill # yay comments!!!!!
+requires murder
+requires get
+requires detonate
+requires basic
+
+def map mPuddle:
+	set name "Puddle"
+	set desc "Description."
+	set itemlist:
+		anItem
+		rock
+		pebble[5]
+		banana
+		something
+	eset
+	set dir.n mPlace
+	set dir.s mMountain
+	set dir.d mAnotherPlace
+edef
+
+def map mMountain:
+	set state default:
+		set name "Tall Mountain"
+		set desc "Another description blah blah blah."
+		set itemlist anotherItem[5], kack, whatsit[inf]
+		set dir.s mChurch
+		set dir.e mValley
+		set dynamic detonate.msg "You asploded mah mountain!":
+			iC4Bomb "You asploded mah mountain with C4!"
+		eset
+	eset
+	set state definitive state1 trigger evDetonate:
+		set name "Destroyed Mountain"
+		set desc "Oh noes!"
+		set itemlist:
+			potato reliesOn kack from default as present
+			something[3] # Put three of this object in the world
+			whatever[inf] # Put an infinite amount of objects in world
+		eset
+		set itemDTag for something "There is a something here as well."
+		set itemDTag for potato:
+			"And on the table there "
+			p("is", "are")
+			curItemAmt()
+			"potato"
+			p("es")
+			"!"
+		eset
+		set itemDTag for whatever "You notice a whole pile of whatever."
+		set dir.s mChina
+		set dir.e mGreg
+		set dir.d mMap
+	eset
+edef
+
+# ******************************************
+
+def item iItem:
+	set name "Stone"
+	set desc "A boring, gray stone."
+	set dynamic kill.msg "This is the default.":
+		kack "This is a diversion from default!"
+		orion "Another diversion! Diff 'weapon' = diff msg!"
+	eset
+	set dynamic kill.newItem anItem: #Remember, this is the default!
+		ded beef #Diff weapon could also yield diff newitem!
+	eset
+edef
