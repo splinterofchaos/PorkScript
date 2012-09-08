@@ -31,6 +31,10 @@ Makefile.in
 ./*/Release/
 ./Debug/
 ./Release/
+./ipch/
+*.sdf
+*.suo
+*.user
 
 # OS generated files
 .DS_Store
