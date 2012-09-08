@@ -5,6 +5,7 @@ PorkScript
 
 This project is currently unfinished. Contributors are welcome, and much help is currently needed in the PorkParser area (my parser is awful, and it needs to be redone -- check PorkParser/PorkParser.cpp if you'd like to see the damage :P ).
 
+Also, this project uses the Boost C++ libraries v1.44, along with Python 2.7.3 32-bit.
 
 Theory
 ------
